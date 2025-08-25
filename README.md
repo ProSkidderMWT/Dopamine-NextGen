@@ -21,7 +21,7 @@ Dopamine是一款类似于Windows的'服务'的应用,由batch脚本(旧版本�
 Dopamine需要的Windows系统文件：<br>
 ***1 > ping.exe<br>***
 ***2 > taskkill.exe<br>***
-***3 > cmd.exe<br>
+***3 > cmd.exe<br>***
 ***4 > powershell.exe<br>***
 <br>在Dopamine的 Legacy (已过时的) 版本之前，Dopamine并不需要powershell.exe<br>
 在Dopamine v1.5 alpha之前，Dopamine还需要wscript.exe<br>
