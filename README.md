@@ -43,7 +43,8 @@ Dopamine需要的Windows系统文件：<br>
 5.如何使用该repo的文件?
 -
 首先，在本repo界面中点击 "Code" 按钮，并选择 "Download ZIP" 将本repo的文件下载下来；<br>
-接着，将本repo的文件("Dopamine.bat")解压到任意的文件夹中；<br>
+然后，在%appdata%文件夹中创建名为Dopamine的文件夹
+接着，将本repo的文件("Dopamine.bat","default-config.txt")解压到新建的文件夹中；<br>
 最后，启动Dopamine。<br>
 
 6.我如何构建自己的可执行文件?
