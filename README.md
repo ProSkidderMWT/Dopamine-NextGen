@@ -10,7 +10,7 @@ Dopamine是一款类似于Windows的'服务'的应用,由batch脚本(旧版本�
 
 2.我应该如何使用Dopamine?
 -
-在release中下载Dopamine的最新构建，下载完毕后双击打开Dopamine，程序会向你自动申请管理员权限，同意后Dopamine便会常驻于后台为您杀死希沃白板的运维服务进程。关闭Dopamine也很简单，重复上述步骤即可。
+在release中下载Dopamine的最新构建，下载完毕后打开Dopamine，在弹出的窗口中选择“是”，之后Dopamine便会常驻于后台为您杀死希沃白板的运维服务进程。关闭Dopamine也很简单，重复上述步骤即可。
 
 3.使用Dopamine的Windows系统需求是什么?
 -
