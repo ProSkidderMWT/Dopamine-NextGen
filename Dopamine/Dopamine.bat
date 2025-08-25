@@ -28,7 +28,7 @@ if %errorlevel% neq 0 (
 
 :setversion
 set branch=nextgen
-set build=2
+set build=3
 if %debug%==true echo %branch%-%build%
 
 :createpath
@@ -47,6 +47,7 @@ type "%appdata%\dopamine_service\config\config.txt"|find "skip-update-check=1]" 
 if %updateskip%==true goto statecheck
 del /f /s /q "%appdata%\dopamine_service\updatetemp.txt"
 curl -l https://proskiddermwt.github.io/dopamine-nextgen-web/update/latest.txt > "%appdata%\dopamine_service\updatetemp.txt"
+type "%appdata%\dopamine_service\updatetemp.txt"|find "[release_version=" >nul&&echo server connect ok||goto updatefail
 type "%appdata%\dopamine_service\updatetemp.txt"|find "%branch%-%build%]" >nul&&set update="true"||set update="false"
 if %update%=="true" goto statecheck
 powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('是否打开浏览器下载Dopamine更新？', 'Dopamine检测到更新', 'YesNo', [System.Windows.Forms.MessageBoxIcon]::Warning);}" > %TEMP%\out.tmp
@@ -54,6 +55,12 @@ set /p OUT=<%TEMP%\out.tmp
 if %OUT%==No (goto statecheck)
 start "" "https://proskiddermwt.github.io/dopamine-nextgen-web/list.html"
 exit
+
+:updatefail
+powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Dopamine 检查更新失败,是否重试？', 'Dopamine %branch%-%build%', 'YesNo', [System.Windows.Forms.MessageBoxIcon]::Warning);}" > %TEMP%\out.tmp
+set /p OUT=<%TEMP%\out.tmp
+if %OUT%==No (goto statecheck)
+goto checkupdate
 
 :statecheck
 set state=off
