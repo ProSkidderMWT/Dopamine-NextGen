@@ -1,0 +1,14 @@
+<- Dopamine Configuration File ->
+#Dopamine NextGen & Legacy was developed by MWT.
+#NextGen - https://proskiddermwt.github.io/dopamine-nextgen-web/
+#Legacy - https://litev4.github.io/dopamine-web/
+
+#Please notice that if Dopamine occurs a illegal value,Dopamine will load the default config.
+
+#Silent mode configuration
+# 0 - disabled ; 1 - only notification ; 2 - only windows pop-up ; 3 - completely silent
+[silent-mode=0]
+
+#Skip update configuration
+# 0 - don't skip ; 1 - skip update check
+[skip-update-check=0]
