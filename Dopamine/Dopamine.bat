@@ -14,6 +14,7 @@ start mshta vbscript:createobject("wscript.shell").run("""%~0"" hide",0)(window.
 :requirefilescheck
 if not exist "%systemdrive%\Windows\System32\PING.EXE" goto requirecheckfilesfailed
 if not exist "%systemdrive%\Windows\System32\taskkill.exe" goto requirecheckfilesfailed
+where powershell|find "powershell.exe" >nul&&goto checklanguage||goto nopowershell
 
 :checklanguage
 ver|find "°æ±¾" >nul&&set ver="chinese"||set ver="notchinese"
@@ -28,7 +29,7 @@ if %errorlevel% neq 0 (
 
 :setversion
 set branch=nextgen
-set build=3
+set build=4
 if %debug%==true echo %branch%-%build%
 
 :createpath
@@ -135,3 +136,6 @@ goto loadupdatecheckconfig
 set window="false"
 set notify="true"
 goto loadupdatecheckconfig
+
+:nopowershell
+start "" "https://proskiddermwt.github.io/dopamine-nextgen-web/help.html"
